@@ -2,11 +2,12 @@
 
 `test/fixtures/` 目录保存归一化后的外部测试数据。
 
-当前按语言分成 4 个目录：
+当前按语言分成 5 个目录：
 
 - `test/fixtures/json`
 - `test/fixtures/toml`
 - `test/fixtures/yaml`
+- `test/fixtures/yaml-rare`
 - `test/fixtures/xml`
 
 ## 文件名规则
@@ -28,3 +29,4 @@
 - 这些文件名已经去掉了一部分无意义或重复前缀。
 - 文件名仍然尽量保留来源目录信息，方便回溯原始数据集中的位置。
 - 当前只依赖文件名中的 `1`、`0` 来区分 `valid` / `invalid`。
+- `test/fixtures/yaml/` 只保留常见 YAML 子集样例；`test/fixtures/yaml-rare/` 存放当前不纳入常规 YAML 回归集的罕见语法样例。
