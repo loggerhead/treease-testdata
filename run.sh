@@ -6,7 +6,7 @@ REPO_ROOT="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
 CORE_DIR="$REPO_ROOT/packages/core"
 
 usage() {
-  printf 'Usage: %s [run|rerun|all]\n' "${0##*/}" >&2
+  printf 'Usage: %s [run]\n' "${0##*/}" >&2
 }
 
 run_step() {
@@ -23,18 +23,11 @@ if [[ $# -gt 1 ]]; then
   exit 1
 fi
 
-mode="${1:-all}"
+mode="${1:-run}"
 
 case "$mode" in
   run)
     run_step "fixtures-run"
-    ;;
-  rerun)
-    run_step "fixtures-rerun"
-    ;;
-  all)
-    run_step "fixtures-run"
-    run_step "fixtures-rerun"
     ;;
   *)
     usage
